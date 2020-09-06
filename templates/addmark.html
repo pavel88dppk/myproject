@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block title %}
+
+    Add Mark
+
+{% endblock %}
+
+{% block main %}
+
+    <h1>Add Mark</h1>
+    <p class="whitetext">"*" required</p>
+    <form action="/add-marks" method="post">
+        <div>
+            <input autocomplete="off" autofocus class="form-control" name="event" placeholder="Name" type="text" style="margin: auto auto 20px auto">
+        </div>
+        <div class="form-group">
+            <select class="form-control" name="subject" required>
+                <option disabled selected value>Subject *</option>
+
+                {% for subject in subjects %}
+                    <option value="{{ subject.name }}">{{ subject.name }}</option>
+                {% endfor %}
+
+            </select>
+            <input autocomplete="off" autofocus class="form-control" name="grade" placeholder="Grade *" type="text" required>
+            <input autocomplete="off" autofocus class="form-control" name="weight" placeholder="Weight *" type="text" required>
+        </div>
+        <div>
+            <input autocomplete="off" autofocus class="form-control" name="points" placeholder="Points" type="text">
+            <input autocomplete="off" autofocus class="form-control" name="maxpoints" placeholder="MAX Points" type="text">
+        </div>
+        <button class="btn btn-light badbutton" type="submit">Add Mark</button>
+    </form>
+
+{% endblock %}

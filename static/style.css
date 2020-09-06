@@ -1,0 +1,235 @@
+main .form-control
+{
+    display: inline-block;
+    width: auto;
+}
+
+
+main
+{
+    overflow-x: auto;
+    text-align: center;
+
+}
+
+
+body
+{
+    background-image: url("/static/bckgr.png");
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-color: rgb(53, 54, 58);
+}
+
+
+
+h1
+{
+    font: 500px "Times New Roman";
+    font-size: 300%;
+    margin: auto auto 40px auto;
+    color: white;
+    border-bottom:3px solid red;
+    padding: 15px 10px;
+}
+
+
+main img
+{
+    /* constrain images on small screens */
+    max-width: 100%;
+}
+.dark-mode {
+  background-color: black;
+  color: white;
+}
+
+
+.space
+{
+    margin: 20px 20px 20px 20px;
+}
+
+
+footer
+{
+    margin: 40px auto auto auto;
+    color: white;
+}
+
+
+.small
+{
+    width: 10%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+
+.badbutton
+{
+    margin: 20px auto auto auto;
+}
+
+
+.whitetext
+{
+    color: white;
+}
+
+
+#sidebar
+{
+    position: fixed;
+    width:200px;
+    height: 100%;
+    background:#151719;
+    left: -200px;
+    transition: all 400ms linear;
+}
+
+
+#sidebar.active
+{
+    left: -20px;
+}
+
+
+#sidebar ul li
+{
+    color: rgb(230, 230, 230);
+    list-style: none;
+    padding: 15px 10px;
+    border-bottom: 1px solid rgb(100, 100, 100);
+    margin: auto auto auto -15px;
+
+}
+
+
+#sidebar .toggle-btn
+{
+    position:absolute;
+    left:230px;
+    top: 20px;
+}
+
+
+#sidebar .toggle-btn span
+{
+    display: block;
+    width: 30px;
+    height: 5px;
+    background: rgb(200, 200, 200);
+    margin: 5px 0px;
+
+}
+
+
+#sidebar ul li a
+{
+    color: white;
+}
+
+
+td, th
+{
+    width: 250px;
+    height: 40px;
+}
+
+
+.bigtext
+{
+    font-size: 130%;
+    font-weight: bold;
+}
+
+
+.borderclass
+{
+    border-top: 3px solid black;
+}
+
+
+table tr:not(:first-child)
+{
+    cursor: pointer;transition: all .25s ease-in-out;
+}
+
+
+table tr:not(:first-child):hover
+{
+    background-color: #ddd;
+}
+
+
+.error
+{
+    color: red;
+    text-align: center;
+    font-size: 32px;
+    background-color: black;
+    font: 32px "Times New Roman";
+}
+
+
+.top
+{
+    border-bottom: 3px solid black;
+}
+
+
+.table
+{
+    border: 3px solid black;
+}
+
+
+.footer
+{
+    position: relative;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    width: 100%;
+    height: 100px;
+
+}
+
+
+.smallerimg
+{
+    width: 200px;
+    height: auto;
+    display: block;
+    margin: auto auto auto auto;
+
+}
+
+
+.floatingbuttons
+{
+    position: fixed;
+
+    right: 0px;
+    width: 150px;
+    height: 150px;
+    background-color: black;
+    top: 50%;
+    margin: -2.5em 0 0 0;
+    z-index: 5;
+    border: 3px solid red;
+    border-right: none;
+    border-radius: 3em 0.5em 0.5em 3em;
+}
+
+
+.floatingbuttons div
+{
+
+    margin: 25px -10px 25px auto;
+}

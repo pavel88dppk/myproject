@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block title %}
+
+    Delete Mark
+
+{% endblock %}
+
+{% block main %}
+
+    <h1>Delete Mark</h1>
+    <form action="/delete-mark" method="post">
+        <div class="form-group">
+            <select class="form-control" name="subject" required>
+                <option disabled selected value>Subject</option>
+
+                {% for subject in subjects %}
+                    <option value="{{ subject.name }}">{{ subject.name }}</option>
+                {% endfor %}
+            </select>
+            <div class="badbutton">
+                <input autocomplete="off" autofocus class="form-control" name="name" placeholder="Name" type="text" style="margin: auto auto 20px auto">
+            </div>
+            <div>
+                <input autocomplete="off" autofocus class="form-control" name="grade" placeholder="Grade" type="text" required>
+                <input autocomplete="off" autofocus class="form-control" name="weight" placeholder="Weight" type="text" required>
+            </div>
+            <div>
+                <button class="btn btn-light" type="submit" style="margin: 20px auto auto auto">Delete</button>
+            </div>
+        </div>
+    </form>
+{% endblock %}

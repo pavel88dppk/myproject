@@ -1,0 +1,26 @@
+### CS50 Final Project - MarkGrade
+
+[Youtube video link](https://youtu.be/2_giITXZfBM)
+
+### Introduction
+My final project is a web application called MarkGrade. As the title suggests, this web application keeps track of your marks from school. It is mostly recommended for students whose school supports the numeric grading system eg. 1-5, 10-1 and others; however, not A-F. This web application was constructed in the CS50 IDE and uses languages Python, HTML, CSS, Javascript, Flask, SQL.
+### Application.py
+Application.py is like a motherboard. It is an extremely crucial component connected to all other files. Having about 450 lines, it is the file where all main functions are declared. It tells the computer what to do when some routes are being accessed via the post and get method. However, it manages errors as well. For example, if a user inputs invalid information, application.py is prepared with defined error-handling in the form of a message which is consequently headed to the footer of layout.html.
+### Layout.html
+In layout.html all the styles and javascript sources are included. It gives access to JQuery and other important software. The main menu containing all the routes is coded here. Furthermore, the whole design is quite defined here (not meaning the style of course). It is how all the pages look overall, the other HTML files only add the data into this template. At the bottom of the page, an error footer is defined which only accepts and displays the given message sent from application.py.
+### Index.html
+Index is quite a complex page. It is coded in such a way that for each distinct subject in the SQLite table 'subjectss' it creates a table and for each mark, in the 'subjectss' table it hires a row. Therefore, at the end of the day, you see the grade, weight, your points, the maximum points and the percentage you received from a test or homework etc. As a title component, you see the name of the 'event' so that the user isn't confused from which test did he get a particular grade. At the bottom of each table, an 'average' row is displayed. The shown value is equal to the weighted average of all the marks. At the bottom of the index page, you can see a one-row table showing the average from all subjects together so that you know, what are your chances of getting to Harvard :).
+### All other HTML files
+These files contain only forms and other features. the two basic routes are Register and Log In. In the register route, the user is asked to type his username, password and email. I have made the email input clever; henceforth it detects whether the email format is valid or not. It was meant that a user could 'forget password' and consequently be contacted via the given email; however, I would have to own my domain as giving the link for changing password - that is not possible now (maybe in future).
+Other HTML files let the user add subject or reverse-like, delete subject. Or add/delete marks. Or perhaps you may submit a form which changes your password.
+### Style
+The main styling file is called style.css and defines the overall style of MarkGrade. The background of these pages is set dark. And so that the space isn't blank, I made a background with some school-like pictures.
+A really important role is played by Bootstrap. Overall, I tried to use the light theme components to contrast with the dark background and the inner components. Bootstrap was the source of my buttons and alerts.
+### Javascript
+The main source of my code was the file called project.js. Not many functions were defined. The main was coded using the JQuery and helps the user to hide and show the mark components of tables in the index (often it would be way too messy seeing all the data). The second function lets the user toggle the menu button. My third function only changes the color of the row the cursor currently points in the index.
+### Project.db
+Project.db is the only sqlite3 database. Many tables are defined because I am unable to delete or change attributes of the staying ones (therefore subjectss and not subjects) - my fault. But in terms of purposeful tables, I record three of them: userss, subjectss and avg. The 'userss' table keeps track of the users' id, username, password-hash and email. The subjectss table shows all the marks each user records eg. the id of the user, name of the subject, grade, weight, points, maximum points, percentage and the name of 'event'. The last table, avg, is updated whenever some marks are inserted or deleted. It contains only the id of the user, the name of the subject and the corresponding average.
+### Conclusion
+This final project was a great experience because not only could I create something of my taste, but I came across many problems whose solving was often really difficult. I realised that with my current skills and some syntax help from Google, I could create a reasonably working web application. Four months ago, I would never imagine such thing! I found out, that the professional web pages I see every day are underneath the hood quite understandable. CS50 was a great experience and I am glad that I could try it. Thank You, what you are doing is phenomenal!
+
+Pavel Dědek, from the Czech Republic

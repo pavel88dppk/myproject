@@ -1,0 +1,94 @@
+{% extends "layout.html" %}
+
+{% block title %}
+
+    Your Marks
+
+{% endblock %}
+
+{% block main %}
+
+    {{ bigerror }}
+
+    <h1>Your Marks</h1>
+    <div class="floatingbuttons">
+        <div><button class="btn btn-light" id="hidetable" onclick="hidetable()">Hide Rows</button></div>
+        <div><button class="btn btn-light" id="showtable" onclick="hidetable()">Show Rows</button></div>
+    </div>
+
+    {% for subject in realsubjects %}
+        <script>
+            $(document).ready(function() {
+                $("#hidetable").click(function() {
+                    $("tbody").hide();
+                });
+                $("#showtable").click(function() {
+                    $("tbody").show();
+                });
+            });
+        </script>
+    <table class="table table-striped table-success" id="table">
+        <thead>
+            <tr class="top">
+                <th></th>
+                <th colspan="3" class="bigtext">{{ subject.name }}</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="hidetable">
+                <th>Grade</th>
+                <th>Weight</th>
+                <th>Points</th>
+                <th>Maximum</th>
+                <th>Percentage</th>
+            </tr>
+        {% for mark in subjects %}
+            {% if mark.grade or mark.weight != none %}
+                {% if mark.name == subject.name %}
+                    {% if mark.event == none %}
+                    <tr>
+                    {% else %}
+                    <tr title={{ mark.event }}>
+                    {% endif %}
+                        <td>{{ mark.grade }}</td>
+                        <td>{{ mark.weight }}</td>
+                    {% if mark.marks != none %}
+                        <td>{{ mark.marks }}</td>
+                        <td>{{ mark.outofmarks }}</td>
+                        <td>{{ mark.percentage }} %</td>
+                    {% else %}
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    {% endif %}
+                    </tr>
+                {% endif %}
+            {% endif %}
+        {% endfor %}
+        </tbody>
+        <tfoot>
+        {% for average in avg %}
+            {% if subject.name == average.subject %}
+                <tr class="borderclass">
+                    <th>Average</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th>{{ average.average }}</th>
+                </tr>
+            {% endif %}
+        {% endfor %}
+        </tfoot>
+    {% endfor %}
+    <table class="table table-striped table-success">
+        <thead>
+            <tr>
+                <th>Overall Average</th>
+
+                <th>{{ overallavg }}</th>
+            </tr>
+        </thead>
+    </table>
+
+{% endblock %}
